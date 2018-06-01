@@ -28,7 +28,7 @@ const papaMurphys = Object.create({}, {
     business: {
         enumerable: true,
         writable: true,
-        value: "walmart"
+        value: "Papa Murphys"
     },
     position: {
         enumerable: true,
@@ -36,7 +36,6 @@ const papaMurphys = Object.create({}, {
         value: "cashier"
     }
 })
-const allJobsObject = {chickFilA, walmart, papaMurphys};
 const objectCreator = (business, position, value) => {
     let myObject = {};
     myObject.business = business;
@@ -44,12 +43,12 @@ const objectCreator = (business, position, value) => {
     return myObject;
 }
 objectCreator("papaMurphys", "value", "cashier");
-const allJobs = [allJobsObject];
+const allJobs = [chickFilA, walmart, papaMurphys];
 
 
-for (x in allJobsObject){
+for (let key in allJobs){
     const articleMaker = document.createElement("article");
-    const textMaker = document.createTextNode(`${allJobsObject[x].business}: ${allJobsObject[x].position}`);
+    const textMaker = document.createTextNode(`${allJobs[key].business}: ${allJobs[key].position}`);
     articleMaker.appendChild(textMaker);
     bodySelector.appendChild(articleMaker);
 }
