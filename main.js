@@ -36,13 +36,22 @@ const papaMurphys = Object.create({}, {
         value: "cashier"
     }
 })
-const objectCreator = (business, position, value) => {
-    let myObject = {};
-    myObject.business = business;
-    myObject.position = {position: value};
-    return myObject;
+
+const objectCreator = (businessName, positionName) => {
+    let myObject = Object.create({},{
+        chickfila: {
+           value:{
+            business: businessName,
+            position: positionName,
+            enumerable: true,
+            writable: true
+        }
+    }
+           
+});
+console.log(myObject);
 }
-objectCreator("papaMurphys", "value", "cashier");
+objectCreator("test", "hello");
 const allJobs = [chickFilA, walmart, papaMurphys];
 
 
